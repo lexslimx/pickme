@@ -6,18 +6,15 @@ namespace pickme
     {
         static void Main(string[] args)
         {
-            MyList moviesList = new MyList("movies to watch");
-            moviesList.AddItem("The Prestige");
-            moviesList.AddItem("Jumbo");
-            moviesList.AddItem("Police Academy");
-            moviesList.AddItem("Cleopatra");
+  
+            Tree tree = new Tree();
+            tree.AddNode(new ListItem("One"));
+            tree.AddNode(new ListItem("Two"));
+            tree.AddNode(new ListItem("Three"));
+            tree.AddNode(new ListItem("Four"));
+            tree.AddNode(new ListItem("Fives"));
 
-            for (int i = 0; i < 4; i++)
-            {
-                ListItem pickedMovie = moviesList.Pick();
-                if (pickedMovie == null) Console.WriteLine("You do not have any items in your list");
-                Console.WriteLine(pickedMovie.Name);
-            }
+            tree.PrintTree(tree.head);
         }
     }
 }

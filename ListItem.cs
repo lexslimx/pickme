@@ -1,3 +1,5 @@
+/* We'll use this code to store our activities,
+by their names*/
 using System;
 
 namespace pickme

@@ -14,7 +14,10 @@ namespace pickme
             tree.AddNode(new ListItem("Four"));
             tree.AddNode(new ListItem("Fives"));
 
+            tree.UpdateNodeCounts(tree.head);
             tree.PrintTree(tree.head);
+            Console.WriteLine(tree.GetNodeCount(tree.head));
+
         }
     }
 }

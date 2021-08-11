@@ -56,8 +56,21 @@ namespace pickme
         {
             if (root == null) return;
             PrintTree(root.Left);
-            Console.WriteLine(root.Value.Name);
+            Console.WriteLine(root.Value.Name + " - " + root.NodeCount );
             PrintTree(root.Right);
+        }
+
+        public void UpdateNodeCounts(TreeNode root)
+        {
+            if (root == null) return;
+            UpdateNodeCounts(root.Left);
+            root.NodeCount =  GetNodeCount(root);
+            UpdateNodeCounts(root.Right);
+        }
+
+        public int GetNodeCount(TreeNode root){
+            if(root == null) return 0;
+            return GetNodeCount(root.Left) + GetNodeCount(root.Right) + 1;
         }
     }
 
